@@ -11,4 +11,5 @@ import UIKit
 class CVCellGallery: UICollectionViewCell {
     
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 }

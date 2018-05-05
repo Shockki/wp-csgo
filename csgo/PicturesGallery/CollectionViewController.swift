@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 
 private let reuseIdentifier = "Cell"
+private var main: [UIImage] = []
+private var funny: [UIImage] = []
+private var weapons: [UIImage] = []
+private var stickers: [UIImage] = []
 
 class CollectionViewController: UICollectionViewController {
 
@@ -25,18 +29,17 @@ class CollectionViewController: UICollectionViewController {
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             self.manager.cellSize(cv: self.collectionView!)
         }
-        navigationController?.hidesBarsOnSwipe = true
+//        navigationController?.hidesBarsOnSwipe = true
 
         manager.loadJSON(title: titleName)
         semaphore.wait()
         
-        for _ in 1...manager.urlPictures.count {
-            manager.arrayImage.append(#imageLiteral(resourceName: "picture"))
-        }
+//        for _ in 1...manager.urlPictures.count {
+//            manager.arrayImage.append(#imageLiteral(resourceName: "picture"))
+//        }
         
         if reachability.connection != .none {
             print("интернет есть")
-            manager.picturesUpload(collectionView: collectionView!, arrayPic: manager.urlPictures)
         }else{
             
         }
@@ -60,13 +63,18 @@ class CollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CVCellGallery
         
-        cell.picture.image = manager.arrayImage[indexPath.row]
-        if manager.arrayImage[indexPath.row] != #imageLiteral(resourceName: "picture") {
+        if let url = URL(string: manager.urlPictures[indexPath.row]) {
             cell.picture.alpha = 1
-            cell.picture.contentMode = .scaleAspectFill
+            manager.downloadImage(url: url, imageView: cell.picture)
         }
-        
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = self.collectionView?.indexPath(for: cell) {
+            let vc = segue.destination as! OpenPictureVC
+            vc.urlPicture = manager.urlPictures[indexPath.row]
+        }
+    }
 }

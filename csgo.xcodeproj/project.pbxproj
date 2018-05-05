@@ -19,6 +19,7 @@
 		FA8552FD209B41CE006288A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8552FC209B41CE006288A7 /* Assets.xcassets */; };
 		FA855300209B41CE006288A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8552FE209B41CE006288A7 /* LaunchScreen.storyboard */; };
 		FA855308209B8BCF006288A7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA855307209B8BCF006288A7 /* CollectionViewController.swift */; };
+		FA93A0AB209CD8E900358BC2 /* OpenPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FA8552FF209B41CE006288A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA855301209B41CE006288A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA855307209B8BCF006288A7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPictureVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				FA855307209B8BCF006288A7 /* CollectionViewController.swift */,
-				FA310895209C800000C569C7 /* GalleryDataManager.swift */,
 				FA310897209C99EB00C569C7 /* CVCellGallery.swift */,
+				FA310895209C800000C569C7 /* GalleryDataManager.swift */,
 			);
 			path = PicturesGallery;
 			sourceTree = "<group>";
@@ -114,6 +116,7 @@
 				FA310891209C5D4800C569C7 /* Reachability.swift */,
 				FA05E628209BE5B800B2D47D /* Menu */,
 				FA310894209C7F2D00C569C7 /* PicturesGallery */,
+				FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */,
 				FA8552F9209B41CE006288A7 /* Main.storyboard */,
 				FA8552FC209B41CE006288A7 /* Assets.xcassets */,
 				FA8552FE209B41CE006288A7 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 				FA855308209B8BCF006288A7 /* CollectionViewController.swift in Sources */,
 				FA310890209C510B00C569C7 /* MenuDataManager.swift in Sources */,
 				FA310892209C5D4800C569C7 /* Reachability.swift in Sources */,
+				FA93A0AB209CD8E900358BC2 /* OpenPictureVC.swift in Sources */,
 				FA8552F8209B41CE006288A7 /* ViewController.swift in Sources */,
 				FA310896209C800000C569C7 /* GalleryDataManager.swift in Sources */,
 				FA05E627209BE4E100B2D47D /* CollectionViewCell.swift in Sources */,

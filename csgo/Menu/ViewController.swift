@@ -24,26 +24,15 @@ class ViewController: UICollectionViewController {
         
         if reachability.connection != .none {
             print("интернет есть")
-            manager.picturesUpload(collectionView: collectionView!)
         }else{
             
         }
+        
+        
 
      
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        navigationController?.hidesBarsOnSwipe = false
-    }
-
-//    @IBAction func actionButton(_ sender: AnyObject) {
-//        print(sender.tag)
-//        performSegue(withIdentifier: "goPictures", sender: self)
-//    }
-    
-    
-    
+  
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -52,13 +41,12 @@ class ViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        cell.picture.image = manager.menuImage[indexPath.row]
-        if manager.menuImage[indexPath.row] != #imageLiteral(resourceName: "picture") {
-            cell.picture.alpha = 1
+        if let url = URL(string: manager.menuPictures[indexPath.row]) {
             cell.picture.contentMode = .scaleAspectFill
+            cell.picture.alpha = 1
+            manager.downloadImage(url: url, imageView: cell.picture)
             cell.labelName.text = manager.nameMenu[indexPath.row]
         }
-
         return cell
     }
     
@@ -68,14 +56,6 @@ class ViewController: UICollectionViewController {
             let vc = segue.destination as! CollectionViewController
             vc.titleName = manager.nameMenu[indexPath.row]
         }
-        
-//        if segue.identifier == "details" {
-//            if let indexPath = collectionView.indexPathForSelectedRow {
-//                let destVC: CollectionViewController = segue.destination as! CollectionViewController
-////                destVC.titleName = notesList[indexPath.row].replacingOccurrences(of: " ", with: "%20")
-//
-//            }
-//        }
     }
 
 }
