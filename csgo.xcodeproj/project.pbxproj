@@ -18,7 +18,9 @@
 		FA8552FB209B41CE006288A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8552F9209B41CE006288A7 /* Main.storyboard */; };
 		FA8552FD209B41CE006288A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8552FC209B41CE006288A7 /* Assets.xcassets */; };
 		FA855300209B41CE006288A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8552FE209B41CE006288A7 /* LaunchScreen.storyboard */; };
-		FA855308209B8BCF006288A7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA855307209B8BCF006288A7 /* CollectionViewController.swift */; };
+		FA855308209B8BCF006288A7 /* ViewControllerGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA855307209B8BCF006288A7 /* ViewControllerGallery.swift */; };
+		FA8897E8209DE106003BC732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8897E7209DE106003BC732 /* GoogleService-Info.plist */; };
+		FA8897EA209DEB06003BC732 /* CVAdUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8897E9209DEB06003BC732 /* CVAdUnitCell.swift */; };
 		FA93A0AB209CD8E900358BC2 /* OpenPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +40,9 @@
 		FA8552FC209B41CE006288A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8552FF209B41CE006288A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA855301209B41CE006288A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA855307209B8BCF006288A7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FA855307209B8BCF006288A7 /* ViewControllerGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGallery.swift; sourceTree = "<group>"; };
+		FA8897E7209DE106003BC732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA8897E9209DEB06003BC732 /* CVAdUnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAdUnitCell.swift; sourceTree = "<group>"; };
 		FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPictureVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +80,7 @@
 			children = (
 				FA8552F7209B41CE006288A7 /* ViewController.swift */,
 				FA05E626209BE4E100B2D47D /* CollectionViewCell.swift */,
+				FA8897E9209DEB06003BC732 /* CVAdUnitCell.swift */,
 				FA31088F209C510B00C569C7 /* MenuDataManager.swift */,
 			);
 			path = Menu;
@@ -84,7 +89,7 @@
 		FA310894209C7F2D00C569C7 /* PicturesGallery */ = {
 			isa = PBXGroup;
 			children = (
-				FA855307209B8BCF006288A7 /* CollectionViewController.swift */,
+				FA855307209B8BCF006288A7 /* ViewControllerGallery.swift */,
 				FA310897209C99EB00C569C7 /* CVCellGallery.swift */,
 				FA310895209C800000C569C7 /* GalleryDataManager.swift */,
 			);
@@ -121,6 +126,7 @@
 				FA8552FC209B41CE006288A7 /* Assets.xcassets */,
 				FA8552FE209B41CE006288A7 /* LaunchScreen.storyboard */,
 				FA855301209B41CE006288A7 /* Info.plist */,
+				FA8897E7209DE106003BC732 /* GoogleService-Info.plist */,
 			);
 			path = csgo;
 			sourceTree = "<group>";
@@ -161,6 +167,11 @@
 					FA8552F1209B41CE006288A7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -187,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8897E8209DE106003BC732 /* GoogleService-Info.plist in Resources */,
 				FA855300209B41CE006288A7 /* LaunchScreen.storyboard in Resources */,
 				FA8552FD209B41CE006288A7 /* Assets.xcassets in Resources */,
 				FA8552FB209B41CE006288A7 /* Main.storyboard in Resources */,
@@ -237,12 +249,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-csgo/Pods-csgo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -256,11 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA855308209B8BCF006288A7 /* CollectionViewController.swift in Sources */,
+				FA855308209B8BCF006288A7 /* ViewControllerGallery.swift in Sources */,
 				FA310890209C510B00C569C7 /* MenuDataManager.swift in Sources */,
 				FA310892209C5D4800C569C7 /* Reachability.swift in Sources */,
 				FA93A0AB209CD8E900358BC2 /* OpenPictureVC.swift in Sources */,
 				FA8552F8209B41CE006288A7 /* ViewController.swift in Sources */,
+				FA8897EA209DEB06003BC732 /* CVAdUnitCell.swift in Sources */,
 				FA310896209C800000C569C7 /* GalleryDataManager.swift in Sources */,
 				FA05E627209BE4E100B2D47D /* CollectionViewCell.swift in Sources */,
 				FA8552F6209B41CE006288A7 /* AppDelegate.swift in Sources */,
@@ -409,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = toli.csgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -425,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = toli.csgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

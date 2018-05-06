@@ -7,37 +7,67 @@
 //
 
 import UIKit
-import SwiftyJSON
-import Alamofire
+import GoogleMobileAds
 
-class ViewController: UICollectionViewController {
+class ViewController: UIViewController, GADBannerViewDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var bannerView: GADBannerView!
+        
     let manager: MenuDataManager = MenuDataManager()
     let reachability: Reachability = Reachability()!
     
-    let jsonMain = "https://wp-csgo.firebaseio.com/main.json"
+    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716" // тестовый идентификатор
+//    let bannerAdUnitID = "ca-app-pub-8863116068218458/6876753052"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "CS:GO Обои"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
+        
+        
+        inteinternetCheck()
+                
+    }
+    
+    func inteinternetCheck() {
         if reachability.connection != .none {
             print("интернет есть")
+            bannerAdUnit()
         }else{
-            
+            print("интернет отсутствует")
+            let ac = UIAlertController(title: "Отсутствует подключение к интернету!", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Повторить", style: .default) { (action) in
+                self.inteinternetCheck()
+                self.collectionView.reloadData()
+            }
+            ac.addAction(action)
+            present(ac, animated: true)
         }
-        
-        
-
-     
     }
-  
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    
+    func bannerAdUnit() {
+//        let request = GADRequest()
+//        request.testDevices = [kGADSimulatorID]
+        bannerView.adUnitID = bannerAdUnitID
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+}
+
+
+
+// MARK: Collection View
+    
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
@@ -53,10 +83,10 @@ class ViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UICollectionViewCell,
             let indexPath = self.collectionView?.indexPath(for: cell) {
-            let vc = segue.destination as! CollectionViewController
+            let vc = segue.destination as! ViewControllerGallery
             vc.titleName = manager.nameMenu[indexPath.row]
         }
     }
-
 }
+
 

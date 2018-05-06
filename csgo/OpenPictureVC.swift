@@ -37,7 +37,7 @@ class OpenPictureVC: UIViewController, UIScrollViewDelegate {
     }
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            let ac = UIAlertController(title: "Ошибка!", message: error.localizedDescription, preferredStyle: .alert)
+            let ac = UIAlertController(title: "Ошибка!", message: "Разрешите доступ к вашему альбому", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
@@ -63,8 +63,6 @@ class OpenPictureVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func pinchGesture(_ sender: UIPinchGestureRecognizer) {
-//        sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
-//        sender.scale = 1
         
         if sender.state == .began || sender.state == .changed {
             sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!

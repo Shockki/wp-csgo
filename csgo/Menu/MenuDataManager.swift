@@ -16,7 +16,7 @@ class MenuDataManager {
         ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FMain%2Fmaxresdefault.jpg?alt=media&token=00398ced-d5c7-4b9a-a272-10556f8b33e8",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FFunny%2F70VzAT1.jpg?alt=media&token=590b1718-32ac-46b2-b4cc-09da912b9dfa",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FWeapons%2Fthumb-1920-570408.jpg?alt=media&token=0c0dfd2f-a18c-4505-a03d-52f97bf83ef9",
-         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FStickers%2Fthumb-1920-881247.jpg?alt=media&token=2a310071-be86-47bb-9fba-8fde513df86f"
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FStickers%2F3d9d1f6209914bfb405f7f7c1c4e19bd.jpg?alt=media&token=30b64ae6-328a-4452-8171-4e6c6d4b6197"
         ]
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -36,6 +36,7 @@ class MenuDataManager {
             }
         }
     }
+    
  
 //----------------------------------------------------------------------
 
