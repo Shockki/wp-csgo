@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class OpenPictureVC: UIViewController, UIScrollViewDelegate {
+class OpenPictureVC: UIViewController, GADInterstitialDelegate {
     
     let manager: GalleryDataManager = GalleryDataManager()
+    let adUnitData: AdUnitData = AdUnitData()
+    var interstitial: GADInterstitial!
     var checkNav: Bool = true
     var urlPicture: String = ""
 
@@ -20,8 +23,6 @@ class OpenPictureVC: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        scrollView.minimumZoomScale = 1
-//        scrollView.maximumZoomScale = 6
         
         if let url = URL(string: urlPicture) {
             manager.downloadImage(url: url, imageView: picture)
@@ -42,7 +43,10 @@ class OpenPictureVC: UIViewController, UIScrollViewDelegate {
             present(ac, animated: true)
         } else {
             let ac = UIAlertController(title: "Готово!", message: nil, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            ac.addAction(UIAlertAction(title: "OK", style: .default) {(action) in
+                self.interstitial = self.createAndLoadInterstitial()
+                self.interstitial.delegate = self
+            })
             present(ac, animated: true)
         }
     }
@@ -79,4 +83,30 @@ class OpenPictureVC: UIViewController, UIScrollViewDelegate {
 //    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 //        return picture
 //    }
+    
+    
+    // MARK: Ad Unit
+    
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let inter = GADInterstitial(adUnitID: adUnitData.interstitialAdUnitID)
+        let request = GADRequest()
+        inter.load(request)
+        if inter.isReady {
+            inter.present(fromRootViewController: self)
+        }else{
+            print("реклама не готова")
+        }
+        return inter
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        interstitial.present(fromRootViewController: self)
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
 }
+
+

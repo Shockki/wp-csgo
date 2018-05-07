@@ -37,16 +37,6 @@ class MenuDataManager {
         }
     }
     
- 
-//----------------------------------------------------------------------
-
-    func menuImageUpload(urlPicture: String) -> UIImage {
-        let mainPic = URL (string: urlPicture)
-        let data = try! Data(contentsOf: mainPic!)
-        let aData = data
-        return UIImage(data: aData)!
-    }
-    
 }
 
 let concurrentQueue = DispatchQueue(label: "concurrenr_queue", attributes: .concurrent)

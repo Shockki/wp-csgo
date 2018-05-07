@@ -75,6 +75,10 @@ class GalleryDataManager {
         }
     }
     
+    func randNum(_ n: Int) -> Int{
+        return Int(arc4random_uniform(UInt32(n)))
+    }
+    
 //-----------------------------------------------------------------
     
     func menuImageUpload(urlPicture: String) -> UIImage {
@@ -82,18 +86,5 @@ class GalleryDataManager {
         let data = try! Data(contentsOf: mainPic!)
         let aData = data
         return UIImage(data: aData)!
-    }
-    
-    func picturesUpload(collectionView: UICollectionView, arrayPic: [String]) {
-        concurrentQueue.async {
-            for value in 0...arrayPic.count - 1 {
-                self.arrayImage[value] = self.menuImageUpload(urlPicture: self.urlPictures[value])
-                DispatchQueue.main.sync {
-                    collectionView.reloadData()
-                }
-            }
-            print("Загрузка картинок закончена")
-        }
-    }
-    
+    }    
 }

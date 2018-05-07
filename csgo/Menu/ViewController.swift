@@ -15,18 +15,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var bannerView: GADBannerView!
         
     let manager: MenuDataManager = MenuDataManager()
+    let adUnitData: AdUnitData = AdUnitData()
     let reachability: Reachability = Reachability()!
-    
-    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716" // тестовый идентификатор
-//    let bannerAdUnitID = "ca-app-pub-8863116068218458/6876753052"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        
-        
-        
+
         inteinternetCheck()
                 
     }
@@ -47,11 +43,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    
     func bannerAdUnit() {
 //        let request = GADRequest()
 //        request.testDevices = [kGADSimulatorID]
-        bannerView.adUnitID = bannerAdUnitID
+        bannerView.adUnitID = adUnitData.bannerAdUnitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
     }
