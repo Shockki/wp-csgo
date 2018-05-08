@@ -24,7 +24,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
         inteinternetCheck()
-                
+        
+        manager.loadURL()
     }
     
     func inteinternetCheck() {

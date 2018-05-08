@@ -8,16 +8,80 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+var urlMain: [String] = []
+var urlFunny: [String] = []
+var urlWeapons: [String] = []
+var urlStickers: [String] = []
 
 class MenuDataManager {
     
     let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры"]
+    let nameMenuJSON = ["main", "funny", "weapons", "stickers"]
     let menuPictures =
-        ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FMain%2Fmaxresdefault.jpg?alt=media&token=00398ced-d5c7-4b9a-a272-10556f8b33e8",
-         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FFunny%2F70VzAT1.jpg?alt=media&token=590b1718-32ac-46b2-b4cc-09da912b9dfa",
-         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FWeapons%2Fthumb-1920-570408.jpg?alt=media&token=0c0dfd2f-a18c-4505-a03d-52f97bf83ef9",
-         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2FStickers%2F3d9d1f6209914bfb405f7f7c1c4e19bd.jpg?alt=media&token=30b64ae6-328a-4452-8171-4e6c6d4b6197"
+        ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fmain.jpg?alt=media&token=b098e03b-5e22-4f83-b7ee-9302105acadf",
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Ffunny.jpg?alt=media&token=ecccd5e2-6533-41cc-839b-d5f25b8d806f",
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fweapons.jpg?alt=media&token=33229e37-ff9f-4f6c-80cd-646ede92ed61",
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fstikers.jpg?alt=media&token=0057aae1-ea14-48fa-b436-94d287428793"
         ]
+    
+    func loadURL() {
+        concurrentQueue.async {
+            self.loadJSON(title: "main", urlArray: urlMain)
+            self.loadJSON(title: "funny", urlArray: urlFunny)
+        }
+        loadJSON(title: "weapons", urlArray: urlWeapons)
+        loadJSON(title: "stickers", urlArray: urlStickers)
+    }
+    
+    func loadJSON(title: String, urlArray: [String]) {
+        Alamofire.request("https://wp-csgo.firebaseio.com/api/\(title).json", method: .get).validate().responseJSON(queue:concurrentQueue) { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                switch title {
+                case "main":
+                    for value in 0...json.count-1 {
+                        urlMain.append(json[value].stringValue)
+//                        print("\(title) - \(json[value].stringValue)")
+                    }
+                case "funny":
+                    for value in 0...json.count-1 {
+                        urlFunny.append(json[value].stringValue)
+//                        print("\(title) - \(json[value].stringValue)")
+                    }
+                case "weapons":
+                    for value in 0...json.count-1 {
+                        urlWeapons.append(json[value].stringValue)
+//                        print("\(title) - \(json[value].stringValue)")
+                    }
+                default:
+                    for value in 0...json.count-1 {
+                        urlStickers.append(json[value].stringValue)
+//                        print("\(title) - \(json[value].stringValue)")
+                    }
+                }
+                print("\n* \(title) LoadJSON - \(Thread.current) *\n")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func dON(_ name: String) -> [String] {
+        switch name {
+        case "main":
+            return urlMain
+        case "funny":
+            return urlFunny
+        case "weapons":
+            return urlWeapons
+        default:
+            return urlStickers
+        }
+    }
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in

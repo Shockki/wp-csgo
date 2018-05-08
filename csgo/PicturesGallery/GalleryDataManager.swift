@@ -16,21 +16,21 @@ class GalleryDataManager {
     var urlPictures: [String] = []
     var arrayImage: [UIImage] = []
     
-    func distributionOfNames(Name: String) -> String {
-        switch Name {
+    func distributionOfNames(name: String) -> [String] {
+        switch name {
         case "Основные":
-            return "main"
+            return urlMain
         case "Смешные":
-            return "funny"
+            return urlFunny
         case "Оружие":
-            return "weapons"
+            return urlWeapons
         default:
-            return "stickers"
+            return urlStickers
         }
     }
     
     func loadJSON(title: String) {
-        Alamofire.request("https://wp-csgo.firebaseio.com/\(distributionOfNames(Name: title)).json", method: .get).validate().responseJSON(queue:concurrentQueue) { response in
+        Alamofire.request("https://wp-csgo.firebaseio.com/\(title).json", method: .get).validate().responseJSON(queue:concurrentQueue) { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

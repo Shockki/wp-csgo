@@ -24,41 +24,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-cg-o89">
-                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
                             </activityIndicatorView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aev-WN-nja">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5By-V2-oGS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5By-V2-oGS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="h7I-pb-Qx0" appends="YES" id="UNd-Xz-vDR"/>
-                                            <outletCollection property="gestureRecognizers" destination="ggL-g2-vjH" appends="YES" id="ouy-y3-qo0"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5By-V2-oGS" secondAttribute="bottom" id="1v9-aA-hHq"/>
-                                    <constraint firstItem="5By-V2-oGS" firstAttribute="leading" secondItem="aev-WN-nja" secondAttribute="leading" id="AxG-dM-grF"/>
-                                    <constraint firstItem="5By-V2-oGS" firstAttribute="centerX" secondItem="aev-WN-nja" secondAttribute="centerX" id="KIW-BH-zx1"/>
-                                    <constraint firstItem="5By-V2-oGS" firstAttribute="top" secondItem="aev-WN-nja" secondAttribute="top" id="Kmr-fe-7pz"/>
-                                    <constraint firstItem="5By-V2-oGS" firstAttribute="centerY" secondItem="aev-WN-nja" secondAttribute="centerY" id="UP3-XD-WbM"/>
-                                    <constraint firstAttribute="trailing" secondItem="5By-V2-oGS" secondAttribute="trailing" id="ivo-0H-JSc"/>
-                                </constraints>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="delegate" destination="dLg-MK-oFq" id="L4Q-cE-7dn"/>
+                                    <outletCollection property="gestureRecognizers" destination="h7I-pb-Qx0" appends="YES" id="UNd-Xz-vDR"/>
+                                    <outletCollection property="gestureRecognizers" destination="ggL-g2-vjH" appends="YES" id="ouy-y3-qo0"/>
                                 </connections>
-                            </scrollView>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aev-WN-nja" firstAttribute="leading" secondItem="ezo-eb-n4A" secondAttribute="leading" id="7Gt-6i-h1T"/>
-                            <constraint firstItem="FS3-cg-o89" firstAttribute="centerX" secondItem="ezo-eb-n4A" secondAttribute="centerX" id="8za-Ko-fF5"/>
-                            <constraint firstItem="aev-WN-nja" firstAttribute="centerX" secondItem="FS3-cg-o89" secondAttribute="centerX" id="Pw0-jg-Fg9"/>
-                            <constraint firstItem="aev-WN-nja" firstAttribute="bottom" secondItem="obN-YC-pzL" secondAttribute="bottom" id="gTR-FS-m05"/>
-                            <constraint firstItem="FS3-cg-o89" firstAttribute="centerY" secondItem="ezo-eb-n4A" secondAttribute="centerY" id="hrB-Bp-15Q"/>
-                            <constraint firstItem="aev-WN-nja" firstAttribute="centerY" secondItem="FS3-cg-o89" secondAttribute="centerY" id="i14-2I-xBt"/>
+                            <constraint firstItem="5By-V2-oGS" firstAttribute="bottom" secondItem="obN-YC-pzL" secondAttribute="bottom" id="BDJ-OV-Ndc"/>
+                            <constraint firstItem="5By-V2-oGS" firstAttribute="trailing" secondItem="obN-YC-pzL" secondAttribute="trailing" id="OiP-rp-jvM"/>
+                            <constraint firstItem="5By-V2-oGS" firstAttribute="leading" secondItem="obN-YC-pzL" secondAttribute="leading" id="R3V-U9-BP2"/>
+                            <constraint firstItem="FS3-cg-o89" firstAttribute="centerX" secondItem="ezo-eb-n4A" secondAttribute="centerX" id="mYx-70-25g"/>
+                            <constraint firstItem="FS3-cg-o89" firstAttribute="centerY" secondItem="ezo-eb-n4A" secondAttribute="centerY" id="nuQ-91-e4R"/>
+                            <constraint firstItem="5By-V2-oGS" firstAttribute="top" secondItem="ezo-eb-n4A" secondAttribute="top" id="yNy-kT-JlJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obN-YC-pzL"/>
                     </view>
@@ -79,7 +63,6 @@
                     <connections>
                         <outlet property="indicator" destination="FS3-cg-o89" id="uME-QP-QdM"/>
                         <outlet property="picture" destination="5By-V2-oGS" id="jp2-BB-b79"/>
-                        <outlet property="scrollView" destination="aev-WN-nja" id="dFf-0w-6xV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1v-8f-vje" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +77,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5686" y="179"/>
+            <point key="canvasLocation" x="5703" y="179"/>
         </scene>
         <!--View Controller Gallery-->
         <scene sceneID="x1h-hj-npg">

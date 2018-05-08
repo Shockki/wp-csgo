@@ -39,14 +39,14 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
         
         internetCheck()
         
+        
     }
     
     
     func internetCheck() {
         if reachability.connection != .none {
             print("интернет есть")
-            manager.loadJSON(title: titleName)
-            semaphore.wait()
+            
         }else{
             print("интернет отсутствует")
             let ac = UIAlertController(title: "Отсутствует подключение к интернету!", message: nil, preferredStyle: .alert)
@@ -90,9 +90,9 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
         interstitial.present(fromRootViewController: self)
     }
     
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        interstitial = createAndLoadInterstitial()
-    }
+//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+//        interstitial = createAndLoadInterstitial()
+//    }
 
 
 }
@@ -100,7 +100,7 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
 extension ViewControllerGallery: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return manager.urlPictures.count
+        return manager.distributionOfNames(name: titleName).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,16 +111,17 @@ extension ViewControllerGallery: UICollectionViewDelegate, UICollectionViewDataS
 //            manager.downloadImage(url: url, imageView: cell.picture)
 //        }
         
-        cell.picture.downloadedFrom(link: manager.urlPictures[indexPath.row], contentMode: .scaleAspectFill)
+        cell.picture.downloadedFrom(link: manager.distributionOfNames(name: titleName)[indexPath.row], contentMode: .scaleAspectFill)
         
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? UICollectionViewCell,
+        if let cell = sender as? CVCellGallery,
             let indexPath = self.collectionView?.indexPath(for: cell) {
             let vc = segue.destination as! OpenPictureVC
-            vc.urlPicture = manager.urlPictures[indexPath.row]
+            vc.urlPicture = manager.distributionOfNames(name: titleName)[indexPath.row]
+            vc.image = cell.picture.image
         }
     }
 }

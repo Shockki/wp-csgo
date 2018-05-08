@@ -11,22 +11,19 @@ import GoogleMobileAds
 
 class OpenPictureVC: UIViewController, GADInterstitialDelegate {
     
-    let manager: GalleryDataManager = GalleryDataManager()
     let adUnitData: AdUnitData = AdUnitData()
     var interstitial: GADInterstitial!
     var checkNav: Bool = true
     var urlPicture: String = ""
+    var image: UIImage!
 
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: urlPicture) {
-            manager.downloadImage(url: url, imageView: picture)
-        }
+        picture.image = image
     }
 
     @IBAction func buttonBack(_ sender: Any) {
@@ -52,11 +49,6 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
     }
     
     
-    
-//    func UIImageWriteToSavedPhotosAlbum(image: UIImage?, completionTarget: Any?, completionSelector: Selector, contextInfo: UnsafeMutableRawPointer?) {
-//    }
-    
-    
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         if checkNav == true {
             navigationController?.setNavigationBarHidden(true, animated: true)
@@ -79,10 +71,6 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
             }, completion: nil)
         }
     }
-    
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return picture
-//    }
     
     
     // MARK: Ad Unit
