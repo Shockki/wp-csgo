@@ -216,7 +216,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6CEE3F4BE8A401146D2EC7BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (

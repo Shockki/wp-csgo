@@ -223,7 +223,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-Zg-xda">
                                                     <rect key="frame" x="0.0" y="95" width="365" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="8ah-Fl-RJN"/>
                                                     </constraints>
@@ -248,7 +248,6 @@
                                         <connections>
                                             <outlet property="labelName" destination="ZdX-Zg-xda" id="4ny-v8-mbj"/>
                                             <outlet property="picture" destination="FvO-Pb-5A4" id="yb7-Mg-Jb5"/>
-                                            <segue destination="QTf-1r-oZU" kind="show" identifier="goPictures" id="kcP-6C-fv0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -285,6 +284,7 @@
                     <connections>
                         <outlet property="bannerView" destination="xkS-uQ-bNE" id="Fmj-Lt-qpF"/>
                         <outlet property="collectionView" destination="3Y3-4a-mT0" id="yNe-Y0-so8"/>
+                        <segue destination="QTf-1r-oZU" kind="show" identifier="goPictures" id="ihA-8k-EHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX1-gO-3dI" userLabel="First Responder" sceneMemberID="firstResponder"/>

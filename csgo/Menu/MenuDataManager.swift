@@ -18,25 +18,26 @@ var urlStickers: [String] = []
 
 class MenuDataManager {
     
-    let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры"]
+    let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры", "Так же смотри"]
     let nameMenuJSON = ["main", "funny", "weapons", "stickers"]
     let menuPictures =
         ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fmain.jpg?alt=media&token=b098e03b-5e22-4f83-b7ee-9302105acadf",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Ffunny.jpg?alt=media&token=ecccd5e2-6533-41cc-839b-d5f25b8d806f",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fweapons.jpg?alt=media&token=33229e37-ff9f-4f6c-80cd-646ede92ed61",
-         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fstikers.jpg?alt=media&token=0057aae1-ea14-48fa-b436-94d287428793"
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fstikers.jpg?alt=media&token=0057aae1-ea14-48fa-b436-94d287428793",
+         "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/mc.jpg?alt=media&token=1b79ce46-09c1-4b48-8510-65c68677000f"
         ]
     
     func loadURL() {
         concurrentQueue.async {
-            self.loadJSON(title: "main", urlArray: urlMain)
-            self.loadJSON(title: "funny", urlArray: urlFunny)
+            self.loadJSON(title: "main")
+            self.loadJSON(title: "funny")
         }
-        loadJSON(title: "weapons", urlArray: urlWeapons)
-        loadJSON(title: "stickers", urlArray: urlStickers)
+        loadJSON(title: "weapons")
+        loadJSON(title: "stickers")
     }
     
-    func loadJSON(title: String, urlArray: [String]) {
+    func loadJSON(title: String) {
         Alamofire.request("https://wp-csgo.firebaseio.com/api/\(title).json", method: .get).validate().responseJSON(queue:concurrentQueue) { response in
             switch response.result {
             case .success(let value):
@@ -70,18 +71,19 @@ class MenuDataManager {
         }
     }
     
-    func dON(_ name: String) -> [String] {
-        switch name {
-        case "main":
-            return urlMain
-        case "funny":
-            return urlFunny
-        case "weapons":
-            return urlWeapons
+    func distributionOfNames(_ number: Int) -> String {
+        switch number {
+        case 0:
+            return "Основные"
+        case 1:
+            return "Смешные"
+        case 2:
+            return "Оружие"
         default:
-            return urlStickers
+            return "Стикеры"
         }
     }
+    
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in

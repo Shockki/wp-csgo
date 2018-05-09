@@ -17,21 +17,21 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     let manager: MenuDataManager = MenuDataManager()
     let adUnitData: AdUnitData = AdUnitData()
     let reachability: Reachability = Reachability()!
-    
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
         inteinternetCheck()
-        
-        manager.loadURL()
+
     }
     
     func inteinternetCheck() {
         if reachability.connection != .none {
             print("интернет есть")
             bannerAdUnit()
+            manager.loadURL()
         }else{
             print("интернет отсутствует")
             let ac = UIAlertController(title: "Отсутствует подключение к интернету!", message: nil, preferredStyle: .alert)
@@ -73,15 +73,26 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             manager.downloadImage(url: url, imageView: cell.picture)
             cell.labelName.text = manager.nameMenu[indexPath.row]
         }
+        
+        
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? UICollectionViewCell,
-            let indexPath = self.collectionView?.indexPath(for: cell) {
-            let vc = segue.destination as! ViewControllerGallery
-            vc.titleName = manager.nameMenu[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch (indexPath.row)  {
+        case 0...3:
+            index = indexPath.row
+            performSegue(withIdentifier: "goPictures", sender: self)
+        default:
+            break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goPictures" {
+                let destVC: ViewControllerGallery = segue.destination as! ViewControllerGallery
+                destVC.titleName = manager.distributionOfNames(index)
+            }
     }
 }
 
