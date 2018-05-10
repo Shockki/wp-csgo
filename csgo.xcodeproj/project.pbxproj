@@ -24,6 +24,7 @@
 		FA8897E8209DE106003BC732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8897E7209DE106003BC732 /* GoogleService-Info.plist */; };
 		FA93A0AB209CD8E900358BC2 /* OpenPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */; };
 		FAB2559F20A060C300506C7F /* AdUnitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2559E20A060C300506C7F /* AdUnitData.swift */; };
+		FAC80D5020A4B938009CACE7 /* 11700.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAC80D4F20A4B938009CACE7 /* 11700.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FA8897E7209DE106003BC732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA93A0AA209CD8E900358BC2 /* OpenPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPictureVC.swift; sourceTree = "<group>"; };
 		FAB2559E20A060C300506C7F /* AdUnitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdUnitData.swift; sourceTree = "<group>"; };
+		FAC80D4F20A4B938009CACE7 /* 11700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11700.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8552F5209B41CE006288A7 /* AppDelegate.swift */,
+				FAC80D4F20A4B938009CACE7 /* 11700.otf */,
 				FA310891209C5D4800C569C7 /* Reachability.swift */,
 				FA2531B3209F7B280093AFE2 /* DesignableButton.swift */,
 				FAB2559E20A060C300506C7F /* AdUnitData.swift */,
@@ -206,6 +209,7 @@
 			files = (
 				FA8897E8209DE106003BC732 /* GoogleService-Info.plist in Resources */,
 				FA855300209B41CE006288A7 /* LaunchScreen.storyboard in Resources */,
+				FAC80D5020A4B938009CACE7 /* 11700.otf in Resources */,
 				FA8552FD209B41CE006288A7 /* Assets.xcassets in Resources */,
 				FA8552FB209B41CE006288A7 /* Main.storyboard in Resources */,
 			);

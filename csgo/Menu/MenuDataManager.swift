@@ -21,7 +21,7 @@ class MenuDataManager {
     let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры", "Так же смотри"]
     let nameMenuJSON = ["main", "funny", "weapons", "stickers"]
     let menuPictures =
-        ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fmain.jpg?alt=media&token=b098e03b-5e22-4f83-b7ee-9302105acadf",
+        ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fmain.jpg?alt=media&token=e5ad5ef0-6a52-46f4-87d9-d262084c6fc6",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Ffunny.jpg?alt=media&token=ecccd5e2-6533-41cc-839b-d5f25b8d806f",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fweapons.jpg?alt=media&token=33229e37-ff9f-4f6c-80cd-646ede92ed61",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fstikers.jpg?alt=media&token=0057aae1-ea14-48fa-b436-94d287428793",

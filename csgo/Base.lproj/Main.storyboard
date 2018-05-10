@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="4SV-zR-wcf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="4SV-zR-wcf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aum-un-bSd" customClass="GADBannerView">
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="5001" y="179"/>
         </scene>
-        <!--CS:GO Обои-->
+        <!--Обои-->
         <scene sceneID="Ldd-cH-g5d">
             <objects>
                 <viewController id="SwJ-0a-M6r" customClass="ViewController" customModule="csgo" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,7 +186,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="YjJ-IP-zex">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="YjJ-IP-zex">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-uQ-bNE" customClass="GADBannerView">
@@ -273,7 +273,7 @@
                         <viewLayoutGuide key="safeArea" id="kgH-Kz-ole"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="CS:GO Обои" id="INK-50-F4N">
+                    <navigationItem key="navigationItem" title="Обои" id="INK-50-F4N">
                         <barButtonItem key="rightBarButtonItem" image="more" id="Kfm-RZ-RsE">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -300,6 +300,10 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.092961825430393219" green="0.17467007040977478" blue="0.25147157907485962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="OkruglizmRegular" family="Okruglizm" pointSize="27"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -318,7 +322,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8DN-TH-08b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="8DN-TH-08b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-vM-vtf">
@@ -339,7 +343,7 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.30241331335616439" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-MW-R5g" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-MW-R5g" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
                                             <rect key="frame" x="15" y="275.5" width="345" height="45"/>
                                             <color key="backgroundColor" red="1" green="0.96146229258203286" blue="0.10190462238556341" alpha="0.067770761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -425,8 +429,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="592" height="960"/>
         <image name="back" width="16" height="16"/>
+        <image name="bg_1" width="1080" height="1920"/>
         <image name="download" width="16" height="16"/>
         <image name="more" width="16" height="16"/>
     </resources>
