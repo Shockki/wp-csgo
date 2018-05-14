@@ -22,6 +22,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        manager.cellSize(cv: collectionView)
         inteinternetCheck()
 
     }

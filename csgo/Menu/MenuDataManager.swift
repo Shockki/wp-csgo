@@ -103,6 +103,18 @@ class MenuDataManager {
         }
     }
     
+    func cellSize(cv: UICollectionView) {
+        let itemSizeW = UIScreen.main.bounds.width/1
+        let itemSizeH = UIScreen.main.bounds.height/4
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
+        layout.itemSize = CGSize(width: itemSizeW, height: itemSizeH)
+        
+        layout.minimumLineSpacing = 5
+        
+        cv.collectionViewLayout = layout
+    }
+    
 }
 
 let concurrentQueue = DispatchQueue(label: "concurrenr_queue", attributes: .concurrent)

@@ -32,7 +32,7 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
             self.manager.cellSize(cv: self.collectionView!)
         }
         bannerAdUnit()
-        if manager.randNum(3) == 0 {
+        if manager.randNum(5) == 0 {
             interstitial = createAndLoadInterstitial()
             interstitial.delegate = self
         }
