@@ -104,7 +104,7 @@ class MenuDataManager {
     }
     
     func cellSize(cv: UICollectionView) {
-        let itemSizeW = UIScreen.main.bounds.width/1
+        let itemSizeW = UIScreen.main.bounds.width
         let itemSizeH = UIScreen.main.bounds.height/4
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)

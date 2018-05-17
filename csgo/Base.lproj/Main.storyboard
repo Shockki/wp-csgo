@@ -332,7 +332,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62e-zF-GlZ">
-                                            <rect key="frame" x="20" y="80" width="335" height="175.5"/>
+                                            <rect key="frame" x="20" y="70" width="335" height="175.5"/>
                                             <string key="text">Приветствую тебя!
 
 Меня зовут Анатолий, я разработчик этого приложения 😁
@@ -344,7 +344,7 @@
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.30241331335616439" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-MW-R5g" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="275.5" width="345" height="45"/>
+                                            <rect key="frame" x="15" y="265.5" width="345" height="45"/>
                                             <color key="backgroundColor" red="1" green="0.96146229258203286" blue="0.10190462238556341" alpha="0.067770761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="fIV-oB-HQS"/>
@@ -363,7 +363,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-Ro-kqF" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="350.5" width="345" height="45"/>
+                                            <rect key="frame" x="15" y="330.5" width="345" height="45"/>
                                             <color key="backgroundColor" red="0.21673284559259826" green="0.73917354060913709" blue="0.0" alpha="0.070000000000000007" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Yh3-WQ-0F4"/>
@@ -381,17 +381,30 @@
                                                 <action selector="shareButton:" destination="94Y-cW-5kR" eventType="touchUpInside" id="GEt-wr-QSr"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обратная связь: tolimodest@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-sh-TBM">
+                                            <rect key="frame" x="20" y="558" width="335" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="icv-OT-t5s"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.30241331339999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Yod-MW-R5g" secondAttribute="trailing" constant="15" id="372-fO-XsU"/>
                                         <constraint firstItem="62e-zF-GlZ" firstAttribute="leading" secondItem="Sk7-d4-uk0" secondAttribute="leading" constant="20" id="6el-IC-hQ1"/>
                                         <constraint firstItem="6mv-Ro-kqF" firstAttribute="leading" secondItem="Sk7-d4-uk0" secondAttribute="leading" constant="15" id="7Pw-Af-zxO"/>
                                         <constraint firstAttribute="trailing" secondItem="62e-zF-GlZ" secondAttribute="trailing" constant="20" id="8s4-NM-qla"/>
-                                        <constraint firstItem="62e-zF-GlZ" firstAttribute="top" secondItem="Sk7-d4-uk0" secondAttribute="top" constant="80" id="BrY-lb-7gX"/>
+                                        <constraint firstItem="62e-zF-GlZ" firstAttribute="top" secondItem="Sk7-d4-uk0" secondAttribute="top" constant="70" id="BrY-lb-7gX"/>
                                         <constraint firstAttribute="trailing" secondItem="6mv-Ro-kqF" secondAttribute="trailing" constant="15" id="QQN-Nb-ee3"/>
-                                        <constraint firstItem="6mv-Ro-kqF" firstAttribute="top" secondItem="Yod-MW-R5g" secondAttribute="bottom" constant="30" id="mY6-nm-3JO"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vaz-sh-TBM" secondAttribute="trailing" constant="20" id="cCR-l2-3rG"/>
+                                        <constraint firstItem="6mv-Ro-kqF" firstAttribute="top" secondItem="Yod-MW-R5g" secondAttribute="bottom" constant="20" id="mY6-nm-3JO"/>
                                         <constraint firstItem="Yod-MW-R5g" firstAttribute="top" secondItem="62e-zF-GlZ" secondAttribute="bottom" constant="20" id="nTZ-2D-vwg"/>
                                         <constraint firstItem="Yod-MW-R5g" firstAttribute="leading" secondItem="Sk7-d4-uk0" secondAttribute="leading" constant="15" id="ort-iT-fDM"/>
+                                        <constraint firstItem="Vaz-sh-TBM" firstAttribute="leading" secondItem="Sk7-d4-uk0" secondAttribute="leading" constant="20" id="sHu-bt-o9Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vaz-sh-TBM" secondAttribute="bottom" constant="5" id="sM7-Bi-dsh"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
