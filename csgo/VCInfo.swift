@@ -22,10 +22,13 @@ class VCInfo: UIViewController, GADInterstitialDelegate {
     }
 
     @IBAction func feedbackButton(_ sender: Any) {
+            if let url = URL(string: "itms-apps://itunes.apple.com/ru/app/c/id1382287105"){
+                UIApplication.shared.open(url, options: [:])
+            }
     }
     
     @IBAction func shareButton(_ sender: Any) {
-        let activityVC = UIActivityViewController(activityItems: ["check"], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: ["Зацени крутое приложение https://itunes.apple.com/ru/app/c/id1382287105"], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
     }

@@ -28,11 +28,12 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
         super.viewDidLoad()
         concurrentQueue.async {
             self.title = self.titleName
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            self.navigationController?.navigationBar.titleTextAttributes =
+                [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Poiret One", size: 24)!]
             self.manager.cellSize(cv: self.collectionView!)
         }
         bannerAdUnit()
-        if manager.randNum(5) == 0 {
+        if manager.randNum(3) == 0 {
             interstitial = createAndLoadInterstitial()
             interstitial.delegate = self
         }

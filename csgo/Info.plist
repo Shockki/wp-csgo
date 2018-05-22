@@ -27,6 +27,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>9955.ttf</string>
 		<string>11700.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5437E51BFEF6D37F35EC3B0A /* Pods_csgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C825AD4579C3BF8A52B2E2CE /* Pods_csgo.framework */; };
 		FA05E627209BE4E100B2D47D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05E626209BE4E100B2D47D /* CollectionViewCell.swift */; };
+		FA1C81B020B42463009AF965 /* 9955.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1C81AF20B42462009AF965 /* 9955.ttf */; };
 		FA2531B2209F775A0093AFE2 /* VCInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2531B1209F775A0093AFE2 /* VCInfo.swift */; };
 		FA2531B4209F7B280093AFE2 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2531B3209F7B280093AFE2 /* DesignableButton.swift */; };
 		FA310890209C510B00C569C7 /* MenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31088F209C510B00C569C7 /* MenuDataManager.swift */; };
@@ -32,6 +33,7 @@
 		D08B44A449AD9D1F4680E292 /* Pods-csgo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-csgo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-csgo/Pods-csgo.debug.xcconfig"; sourceTree = "<group>"; };
 		EFEBAC494A26CFEC917EC4C1 /* Pods-csgo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-csgo.release.xcconfig"; path = "Pods/Target Support Files/Pods-csgo/Pods-csgo.release.xcconfig"; sourceTree = "<group>"; };
 		FA05E626209BE4E100B2D47D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FA1C81AF20B42462009AF965 /* 9955.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9955.ttf; sourceTree = "<group>"; };
 		FA2531B1209F775A0093AFE2 /* VCInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInfo.swift; sourceTree = "<group>"; };
 		FA2531B3209F7B280093AFE2 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		FA31088F209C510B00C569C7 /* MenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataManager.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				FA8552F5209B41CE006288A7 /* AppDelegate.swift */,
 				FAC80D4F20A4B938009CACE7 /* 11700.otf */,
+				FA1C81AF20B42462009AF965 /* 9955.ttf */,
 				FA310891209C5D4800C569C7 /* Reachability.swift */,
 				FA2531B3209F7B280093AFE2 /* DesignableButton.swift */,
 				FAB2559E20A060C300506C7F /* AdUnitData.swift */,
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1C81B020B42463009AF965 /* 9955.ttf in Resources */,
 				FA8897E8209DE106003BC732 /* GoogleService-Info.plist in Resources */,
 				FA855300209B41CE006288A7 /* LaunchScreen.storyboard in Resources */,
 				FAC80D5020A4B938009CACE7 /* 11700.otf in Resources */,

@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ZapfDingbats.ttf">
-            <string>ZapfDingbatsITC</string>
+        <array key="9955.ttf">
+            <string>PoiretOne-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -221,13 +221,24 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="365" height="140"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkx-hN-qKh">
+                                                    <rect key="frame" x="0.0" y="95" width="365" height="40"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tak-Hu-PA7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="8vj-I4-ogZ"/>
+                                                    </constraints>
+                                                    <blurEffect style="light"/>
+                                                </visualEffectView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-Zg-xda">
                                                     <rect key="frame" x="0.0" y="95" width="365" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="8ah-Fl-RJN"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="PoiretOne-Regular" family="Poiret One" pointSize="25"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.38324058220000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -239,7 +250,10 @@
                                             <constraint firstItem="ZdX-Zg-xda" firstAttribute="leading" secondItem="TfR-kF-2rw" secondAttribute="leading" id="9zA-Bx-Ir5"/>
                                             <constraint firstItem="FvO-Pb-5A4" firstAttribute="top" secondItem="TfR-kF-2rw" secondAttribute="top" id="EgT-Pu-PIM"/>
                                             <constraint firstAttribute="bottom" secondItem="ZdX-Zg-xda" secondAttribute="bottom" constant="5" id="Fgj-ec-lSF"/>
+                                            <constraint firstAttribute="bottom" secondItem="pkx-hN-qKh" secondAttribute="bottom" constant="5" id="Hgr-ei-L0K"/>
+                                            <constraint firstAttribute="trailing" secondItem="pkx-hN-qKh" secondAttribute="trailing" id="L8I-Yt-lP6"/>
                                             <constraint firstAttribute="trailing" secondItem="FvO-Pb-5A4" secondAttribute="trailing" id="Ss2-hQ-l0t"/>
+                                            <constraint firstItem="pkx-hN-qKh" firstAttribute="leading" secondItem="TfR-kF-2rw" secondAttribute="leading" id="ToR-Ge-cg4"/>
                                             <constraint firstAttribute="trailing" secondItem="ZdX-Zg-xda" secondAttribute="trailing" id="YKp-GK-9wy"/>
                                             <constraint firstItem="F0l-le-tKf" firstAttribute="centerX" secondItem="TfR-kF-2rw" secondAttribute="centerX" id="bJM-jv-d2K"/>
                                             <constraint firstItem="F0l-le-tKf" firstAttribute="centerY" secondItem="TfR-kF-2rw" secondAttribute="centerY" id="fQg-O5-d4N"/>
@@ -343,7 +357,7 @@
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.30241331335616439" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-MW-R5g" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-MW-R5g" customClass="DesignableButton" customModule="csgo" customModuleProvider="target">
                                             <rect key="frame" x="15" y="265.5" width="345" height="45"/>
                                             <color key="backgroundColor" red="1" green="0.96146229258203286" blue="0.10190462238556341" alpha="0.067770761986301373" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
