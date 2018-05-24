@@ -11,11 +11,14 @@ import GoogleMobileAds
 
 class OpenPictureVC: UIViewController, GADInterstitialDelegate {
     
+    let manager: GalleryDataManager = GalleryDataManager()
     let adUnitData: AdUnitData = AdUnitData()
     var interstitial: GADInterstitial!
     var checkNav: Bool = true
     var urlPicture: String = ""
     var image: UIImage!
+    var indexImage: Int!
+    var nameOfMenu: String = ""
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -24,6 +27,7 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
         super.viewDidLoad()
         
         picture.image = image
+        
     }
 
     @IBAction func buttonBack(_ sender: Any) {
@@ -48,7 +52,6 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
         }
     }
     
-    
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         if checkNav == true {
             navigationController?.setNavigationBarHidden(true, animated: true)
@@ -71,6 +74,7 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
             }, completion: nil)
         }
     }
+
     
     
     // MARK: Ad Unit
@@ -96,5 +100,6 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
         interstitial = createAndLoadInterstitial()
     }
 }
+
 
 

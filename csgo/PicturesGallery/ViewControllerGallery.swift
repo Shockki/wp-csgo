@@ -40,7 +40,6 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
         
         internetCheck()
         
-        
     }
     
     
@@ -108,21 +107,19 @@ extension ViewControllerGallery: UICollectionViewDelegate, UICollectionViewDataS
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CVCellGallery
         
-//        if let url = URL(string: manager.urlPictures[indexPath.row]) {
-//            manager.downloadImage(url: url, imageView: cell.picture)
-//        }
-        
         cell.picture.downloadedFrom(link: manager.distributionOfNames(name: titleName)[indexPath.row], contentMode: .scaleAspectFill)
-        
+
         return cell
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? CVCellGallery,
             let indexPath = self.collectionView?.indexPath(for: cell) {
             let vc = segue.destination as! OpenPictureVC
             vc.urlPicture = manager.distributionOfNames(name: titleName)[indexPath.row]
             vc.image = cell.picture.image
+            vc.indexImage = indexPath.row
+            vc.nameOfMenu = titleName
         }
     }
 }
@@ -146,4 +143,5 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
+    
 }

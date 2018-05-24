@@ -12,4 +12,9 @@ class CVCellGallery: UICollectionViewCell {
     
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    override func prepareForReuse() {
+        picture.image = nil
+        super.prepareForReuse()
+    }
 }

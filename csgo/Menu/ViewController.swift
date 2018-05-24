@@ -13,7 +13,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bannerView: GADBannerView!
-        
+    @IBOutlet weak var bgLoad: UIView!
+    
     let manager: MenuDataManager = MenuDataManager()
     let adUnitData: AdUnitData = AdUnitData()
     let reachability: Reachability = Reachability()!
@@ -33,11 +34,21 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Okruglizm", size: 27)!]
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        while manager.checkLoadJSON() == false {
+            bgLoad.alpha = 1
+        }
+        UIView.animate(withDuration: 0.3, animations: { self.bgLoad.alpha = 0 })
+        print("Загрузка JSON завершена")
+    }
+    
     func inteinternetCheck() {
         if reachability.connection != .none {
             print("интернет есть")
             bannerAdUnit()
             manager.loadURL()
+            
         }else{
             print("интернет отсутствует")
             let ac = UIAlertController(title: "Отсутствует подключение к интернету!", message: nil, preferredStyle: .alert)
@@ -66,19 +77,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return manager.countCategories + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        if let url = URL(string: manager.menuPictures[indexPath.row]) {
-            cell.picture.contentMode = .scaleAspectFill
-            cell.picture.alpha = 1
-            manager.downloadImage(url: url, imageView: cell.picture)
-            cell.labelName.text = manager.nameMenu[indexPath.row]
-        }
+        cell.picture.downloadedFrom(link: manager.menuPictures[indexPath.row], contentMode: .scaleAspectFill)
+        cell.labelName.text = manager.nameMenu[indexPath.row]
         
         
         return cell
@@ -90,7 +97,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             index = indexPath.row
             performSegue(withIdentifier: "goPictures", sender: self)
         default:
-            break
+            if let url = URL(string: "itms-apps://itunes.apple.com/ru/app/id1382668321"){
+                UIApplication.shared.open(url, options: [:])
+            }
         }
     }
     

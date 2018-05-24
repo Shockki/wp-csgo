@@ -27,6 +27,8 @@ class MenuDataManager {
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fstikers.jpg?alt=media&token=0057aae1-ea14-48fa-b436-94d287428793",
          "https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/mc.jpg?alt=media&token=1b79ce46-09c1-4b48-8510-65c68677000f"
         ]
+    let countCategories = 4
+    private var checkJSON = 0
     
     func loadURL() {
         concurrentQueue.async {
@@ -35,6 +37,13 @@ class MenuDataManager {
         }
         loadJSON(title: "weapons")
         loadJSON(title: "stickers")
+    }
+    
+    func checkLoadJSON() -> Bool {
+        if checkJSON == countCategories {
+            return true
+        }
+        return false
     }
     
     func loadJSON(title: String) {
@@ -65,6 +74,7 @@ class MenuDataManager {
                     }
                 }
                 print("\n* \(title) LoadJSON - \(Thread.current) *\n")
+                self.checkJSON += 1
             case .failure(let error):
                 print(error)
             }

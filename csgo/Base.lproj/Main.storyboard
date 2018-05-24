@@ -77,7 +77,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5703" y="179"/>
+            <point key="canvasLocation" x="5701.6000000000004" y="178.56071964017991"/>
         </scene>
         <!--View Controller Gallery-->
         <scene sceneID="x1h-hj-npg">
@@ -135,7 +135,7 @@
                                         <connections>
                                             <outlet property="indicator" destination="5Ml-1B-OaG" id="loq-gL-aBX"/>
                                             <outlet property="picture" destination="rl6-FQ-Idg" id="l28-uL-t17"/>
-                                            <segue destination="dLg-MK-oFq" kind="show" id="SCa-Cm-ztf"/>
+                                            <segue destination="dLg-MK-oFq" kind="show" id="0tR-E9-4FM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -270,17 +270,34 @@
                                     <outlet property="delegate" destination="SwJ-0a-M6r" id="OYe-fa-zIg"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-ef-tXF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YIU-lm-Yc9">
+                                        <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerY" secondItem="ozA-ef-tXF" secondAttribute="centerY" id="2tU-6W-g6L"/>
+                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerX" secondItem="ozA-ef-tXF" secondAttribute="centerX" id="Fkc-w0-lhZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="top" secondItem="9z6-XW-gN2" secondAttribute="top" id="2dI-MY-vj9"/>
+                            <constraint firstItem="ozA-ef-tXF" firstAttribute="trailing" secondItem="kgH-Kz-ole" secondAttribute="trailing" id="CHA-fS-Xz9"/>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="trailing" secondItem="kgH-Kz-ole" secondAttribute="trailing" id="EoF-kN-uce"/>
+                            <constraint firstItem="ozA-ef-tXF" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="Ezh-Al-QfM"/>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="leading" secondItem="kgH-Kz-ole" secondAttribute="leading" id="NZx-jm-uL1"/>
                             <constraint firstItem="xkS-uQ-bNE" firstAttribute="centerX" secondItem="9z6-XW-gN2" secondAttribute="centerX" id="VuF-Ze-lsP"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="Wg0-y9-YKy"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="leading" secondItem="9z6-XW-gN2" secondAttribute="leading" id="ZMD-zw-y8B"/>
+                            <constraint firstItem="ozA-ef-tXF" firstAttribute="leading" secondItem="kgH-Kz-ole" secondAttribute="leading" id="aJz-A9-zKd"/>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="trailing" secondItem="YjJ-IP-zex" secondAttribute="trailing" id="aLG-NT-WqE"/>
                             <constraint firstItem="xkS-uQ-bNE" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="bK9-CR-dup"/>
+                            <constraint firstItem="ozA-ef-tXF" firstAttribute="top" secondItem="kgH-Kz-ole" secondAttribute="top" id="c6K-BI-vmU"/>
                             <constraint firstItem="xkS-uQ-bNE" firstAttribute="top" secondItem="3Y3-4a-mT0" secondAttribute="bottom" id="fLw-0A-OGR"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="top" secondItem="9z6-XW-gN2" secondAttribute="top" id="rug-6o-rhB"/>
                         </constraints>
@@ -297,13 +314,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="xkS-uQ-bNE" id="Fmj-Lt-qpF"/>
+                        <outlet property="bgLoad" destination="ozA-ef-tXF" id="cte-dr-KZw"/>
                         <outlet property="collectionView" destination="3Y3-4a-mT0" id="yNe-Y0-so8"/>
                         <segue destination="QTf-1r-oZU" kind="show" identifier="goPictures" id="ihA-8k-EHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX1-gO-3dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4321" y="179"/>
+            <point key="canvasLocation" x="4320.8000000000002" y="178.56071964017991"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9tT-Qn-eBS">
