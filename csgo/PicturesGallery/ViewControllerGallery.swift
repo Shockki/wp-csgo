@@ -68,9 +68,10 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
     func bannerAdUnit() {
 //        let request = GADRequest()
 //        request.testDevices = [kGADSimulatorID]
-        bannerView.adUnitID = adUnitData.bannerAdUnitID
+        bannerView.adUnitID = adUnitData.bannerAdUnitID_2
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {

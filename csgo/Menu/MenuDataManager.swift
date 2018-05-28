@@ -16,9 +16,17 @@ var urlFunny: [String] = []
 var urlWeapons: [String] = []
 var urlStickers: [String] = []
 
+var cellCount = 4
+var picCellAd_1: String = ""
+var picCellAd_2: String = ""
+var urlAdApp_1: String = ""
+var urlAdApp_2: String = ""
+var info_1: String = ""
+var info_2: String = ""
+
 class MenuDataManager {
     
-    let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры", "Так же смотри"]
+    let nameMenu = ["Основные", "Смешные", "Оружие", "Стикеры", "Так же смотри", "Так же смотри"]
     let nameMenuJSON = ["main", "funny", "weapons", "stickers"]
     let menuPictures =
         ["https://firebasestorage.googleapis.com/v0/b/wp-csgo.appspot.com/o/CSGO%2Fmain.jpg?alt=media&token=e5ad5ef0-6a52-46f4-87d9-d262084c6fc6",
@@ -32,15 +40,20 @@ class MenuDataManager {
     
     func loadURL() {
         concurrentQueue.async {
-            self.loadJSON(title: "main")
-            self.loadJSON(title: "funny")
+            self.loadJSON(title: "settings")
+            concurrentQueue.async {
+                self.loadJSON(title: "main")
+            }
+            concurrentQueue.async {
+                self.loadJSON(title: "funny")
+            }
+            self.loadJSON(title: "weapons")
         }
-        loadJSON(title: "weapons")
         loadJSON(title: "stickers")
     }
     
     func checkLoadJSON() -> Bool {
-        if checkJSON == countCategories {
+        if checkJSON == countCategories + 1{
             return true
         }
         return false
@@ -67,11 +80,21 @@ class MenuDataManager {
                         urlWeapons.append(json[value].stringValue)
 //                        print("\(title) - \(json[value].stringValue)")
                     }
-                default:
+                case "stikers":
                     for value in 0...json.count-1 {
                         urlStickers.append(json[value].stringValue)
 //                        print("\(title) - \(json[value].stringValue)")
                     }
+                case "settings":
+                    cellCount = json["cellCount"].intValue
+                    picCellAd_1 = json["picCellAd_1"].stringValue
+                    picCellAd_2 = json["picCellAd_2"].stringValue
+                    urlAdApp_1 = json["urlAdApp_1"].stringValue
+                    urlAdApp_2 = json["urlAdApp_2"].stringValue
+                    info_1 = json["info_1"].stringValue
+                    info_2 = json["info_2"].stringValue
+                default:
+                    break
                 }
                 print("\n* \(title) LoadJSON - \(Thread.current) *\n")
                 self.checkJSON += 1

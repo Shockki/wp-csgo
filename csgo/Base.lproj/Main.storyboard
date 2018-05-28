@@ -189,6 +189,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="YjJ-IP-zex">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-ef-tXF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YIU-lm-Yc9">
+                                        <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerY" secondItem="ozA-ef-tXF" secondAttribute="centerY" id="2tU-6W-g6L"/>
+                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerX" secondItem="ozA-ef-tXF" secondAttribute="centerX" id="Fkc-w0-lhZ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-uQ-bNE" customClass="GADBannerView">
                                 <rect key="frame" x="28" y="553" width="320" height="50"/>
                                 <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -270,19 +283,6 @@
                                     <outlet property="delegate" destination="SwJ-0a-M6r" id="OYe-fa-zIg"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-ef-tXF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YIU-lm-Yc9">
-                                        <rect key="frame" x="169" y="283" width="37" height="37"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerY" secondItem="ozA-ef-tXF" secondAttribute="centerY" id="2tU-6W-g6L"/>
-                                    <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerX" secondItem="ozA-ef-tXF" secondAttribute="centerX" id="Fkc-w0-lhZ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

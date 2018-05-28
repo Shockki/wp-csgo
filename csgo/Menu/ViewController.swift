@@ -19,10 +19,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     let adUnitData: AdUnitData = AdUnitData()
     let reachability: Reachability = Reachability()!
     var index: Int!
+    var checkUploadPic = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collectionView.alpha = 0
+        bgLoad.alpha = 1
         manager.cellSize(cv: collectionView)
         inteinternetCheck()
 
@@ -39,7 +41,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         while manager.checkLoadJSON() == false {
             bgLoad.alpha = 1
         }
-        UIView.animate(withDuration: 0.3, animations: { self.bgLoad.alpha = 0 })
+        if checkUploadPic == true {
+            collectionView.reloadData()
+            checkUploadPic = false
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.bgLoad.alpha = 0
+            self.collectionView.alpha = 1
+        })
         print("Загрузка JSON завершена")
     }
     
@@ -64,9 +73,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     func bannerAdUnit() {
 //        let request = GADRequest()
 //        request.testDevices = [kGADSimulatorID]
-        bannerView.adUnitID = adUnitData.bannerAdUnitID
+        bannerView.adUnitID = adUnitData.bannerAdUnitID_1
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 }
 
@@ -77,15 +87,30 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return manager.countCategories + 1
+        if cellCount < manager.countCategories || cellCount > 6 {
+            return manager.countCategories
+        }else{
+            return cellCount
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        cell.picture.downloadedFrom(link: manager.menuPictures[indexPath.row], contentMode: .scaleAspectFill)
         cell.labelName.text = manager.nameMenu[indexPath.row]
+        switch indexPath.row {
+        case 0...3:
+            cell.picture.downloadedFrom(link: manager.menuPictures[indexPath.row], contentMode: .scaleAspectFill)
+        case 4:
+            cell.picture.downloadedFrom(link: picCellAd_1, contentMode: .scaleAspectFill)
+            print("\n\(picCellAd_1)\n")
+        case 5:
+            cell.picture.downloadedFrom(link: picCellAd_2, contentMode: .scaleAspectFill)
+            print("\n\(picCellAd_2)\n")
+        default:
+            break
+        }
         
         
         return cell
@@ -96,10 +121,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         case 0...3:
             index = indexPath.row
             performSegue(withIdentifier: "goPictures", sender: self)
-        default:
-            if let url = URL(string: "itms-apps://itunes.apple.com/ru/app/id1382668321"){
+        case 4:
+            if let url = URL(string: urlAdApp_1){
                 UIApplication.shared.open(url, options: [:])
             }
+        case 5:
+            if let url = URL(string: urlAdApp_2){
+                UIApplication.shared.open(url, options: [:])
+            }
+        default:
+            break
         }
     }
     
