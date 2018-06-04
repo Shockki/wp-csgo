@@ -101,13 +101,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.labelName.text = manager.nameMenu[indexPath.row]
         switch indexPath.row {
         case 0...3:
-            cell.picture.downloadedFrom(link: manager.menuPictures[indexPath.row], contentMode: .scaleAspectFill)
+            cell.picture.sd_setImage(with: URL(string: manager.menuPictures[indexPath.row]))
         case 4:
-            cell.picture.downloadedFrom(link: picCellAd_1, contentMode: .scaleAspectFill)
-            print("\n\(picCellAd_1)\n")
+            cell.picture.sd_setImage(with: URL(string: picCellAd_1))
         case 5:
-            cell.picture.downloadedFrom(link: picCellAd_2, contentMode: .scaleAspectFill)
-            print("\n\(picCellAd_2)\n")
+            cell.picture.sd_setImage(with: URL(string: picCellAd_2))
         default:
             break
         }

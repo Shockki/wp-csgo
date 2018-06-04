@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (4.6.0)
-  - Firebase (4.8.2):
-    - Firebase/Core (= 4.8.2)
   - Firebase/AdMob (4.8.2):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.27.0)
@@ -26,14 +24,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
-  - Firebase
   - Firebase/AdMob
   - Firebase/Core
-  - Google-Mobile-Ads-SDK
+  - SDWebImage
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
@@ -45,8 +45,9 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2cc1ca2a56b4a7944bc56e4581afad10e43e132b
+PODFILE CHECKSUM: 6970b55235b99c81c2489c9d875eac93774cee2e
 
 COCOAPODS: 1.3.1

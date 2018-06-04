@@ -7,10 +7,9 @@ target 'csgo' do
 
 pod 'Alamofire', '~> 4.5'
 pod 'SwiftyJSON', '~> 3.1'
-pod 'Firebase'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
-pod 'Google-Mobile-Ads-SDK'
+pod 'SDWebImage'
 
   # Pods for csgo
 
