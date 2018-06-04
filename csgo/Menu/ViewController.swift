@@ -49,13 +49,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             self.bgLoad.alpha = 0
             self.collectionView.alpha = 1
         })
+        if advertising == true {
+            bannerAdUnit()
+        }
         print("Загрузка JSON завершена")
     }
     
     func inteinternetCheck() {
         if reachability.connection != .none {
             print("интернет есть")
-            bannerAdUnit()
             manager.loadURL()
             
         }else{

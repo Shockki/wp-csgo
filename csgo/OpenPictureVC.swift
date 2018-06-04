@@ -45,8 +45,10 @@ class OpenPictureVC: UIViewController, GADInterstitialDelegate {
         } else {
             let ac = UIAlertController(title: "Готово!", message: nil, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default) {(action) in
-                self.interstitial = self.createAndLoadInterstitial()
-                self.interstitial.delegate = self
+                if advertising == true {
+                    self.interstitial = self.createAndLoadInterstitial()
+                    self.interstitial.delegate = self
+                }
             })
             present(ac, animated: true)
         }

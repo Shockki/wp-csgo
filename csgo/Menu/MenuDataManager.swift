@@ -23,6 +23,7 @@ var urlAdApp_1: String = ""
 var urlAdApp_2: String = ""
 var info_1: String = ""
 var info_2: String = ""
+var advertising = true
 
 class MenuDataManager {
     
@@ -93,6 +94,7 @@ class MenuDataManager {
                     urlAdApp_2 = json["urlAdApp_2"].stringValue
                     info_1 = json["info_1"].stringValue
                     info_2 = json["info_2"].stringValue
+                    advertising = json["advertising"].boolValue
                 default:
                     break
                 }
@@ -140,7 +142,7 @@ class MenuDataManager {
         let itemSizeW = UIScreen.main.bounds.width
         let itemSizeH = UIScreen.main.bounds.height/4
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
+        layout.sectionInset = UIEdgeInsetsMake(5, 0, 55, 0)
         layout.itemSize = CGSize(width: itemSizeW, height: itemSizeH)
         
         layout.minimumLineSpacing = 5

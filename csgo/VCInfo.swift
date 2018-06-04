@@ -34,8 +34,10 @@ class VCInfo: UIViewController, GADInterstitialDelegate {
     }
 
     @IBAction func backButton(_ sender: Any) {
-        interstitial = createAndLoadInterstitial()
-        interstitial.delegate = self
+        if advertising == true {
+            interstitial = createAndLoadInterstitial()
+            interstitial.delegate = self
+        }
         navigationController?.popViewController(animated: true)
     }
     

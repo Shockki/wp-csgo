@@ -32,10 +32,12 @@ class ViewControllerGallery: UIViewController, GADBannerViewDelegate, GADInterst
                 [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Poiret One", size: 24)!]
             self.manager.cellSize(cv: self.collectionView!)
         }
-        bannerAdUnit()
-        if manager.randNum(3) == 0 {
-            interstitial = createAndLoadInterstitial()
-            interstitial.delegate = self
+        if  advertising == true {
+            bannerAdUnit()
+            if manager.randNum(3) == 0 {
+                interstitial = createAndLoadInterstitial()
+                interstitial.delegate = self
+            }
         }
         
         internetCheck()

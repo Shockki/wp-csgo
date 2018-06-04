@@ -48,7 +48,7 @@ class GalleryDataManager {
     func cellSize(cv: UICollectionView) {
         let itemSize = UIScreen.main.bounds.width/3 - 3
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(3, 0, 3, 0)
+        layout.sectionInset = UIEdgeInsetsMake(3, 0, 55, 0)
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
         
         layout.minimumInteritemSpacing = 3

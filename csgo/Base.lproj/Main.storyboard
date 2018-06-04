@@ -77,7 +77,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5701.6000000000004" y="178.56071964017991"/>
+            <point key="canvasLocation" x="5678" y="179"/>
         </scene>
         <!--View Controller Gallery-->
         <scene sceneID="x1h-hj-npg">
@@ -90,16 +90,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="4SV-zR-wcf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aum-un-bSd" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="553" width="320" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="O1g-Xx-zcc"/>
-                                    <constraint firstAttribute="width" constant="320" id="jBm-VB-WF9"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-6r-fHF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Xhf-gG-ZjA">
                                     <size key="itemSize" width="120" height="120"/>
@@ -144,16 +136,24 @@
                                     <outlet property="delegate" destination="QTf-1r-oZU" id="egm-qk-o4Z"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aum-un-bSd" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="553" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O1g-Xx-zcc"/>
+                                    <constraint firstAttribute="width" constant="320" id="jBm-VB-WF9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aum-un-bSd" firstAttribute="centerX" secondItem="SG3-gT-Obd" secondAttribute="centerX" id="4Z7-L0-mge"/>
-                            <constraint firstItem="aum-un-bSd" firstAttribute="top" secondItem="Kqn-6r-fHF" secondAttribute="bottom" id="GDH-2N-YSE"/>
                             <constraint firstItem="4SV-zR-wcf" firstAttribute="top" secondItem="SG3-gT-Obd" secondAttribute="top" id="KhY-db-jqq"/>
                             <constraint firstItem="4SV-zR-wcf" firstAttribute="trailing" secondItem="JoD-Uj-Kwy" secondAttribute="trailing" id="M9h-DK-Z7I"/>
                             <constraint firstItem="4SV-zR-wcf" firstAttribute="bottom" secondItem="JoD-Uj-Kwy" secondAttribute="bottom" id="RJv-V4-GaO"/>
                             <constraint firstItem="Kqn-6r-fHF" firstAttribute="top" secondItem="SG3-gT-Obd" secondAttribute="top" id="TSo-27-mm3"/>
                             <constraint firstItem="JoD-Uj-Kwy" firstAttribute="bottom" secondItem="aum-un-bSd" secondAttribute="bottom" id="ZeD-gZ-w1t"/>
+                            <constraint firstItem="Kqn-6r-fHF" firstAttribute="bottom" secondItem="JoD-Uj-Kwy" secondAttribute="bottom" id="apk-a5-cwj"/>
                             <constraint firstItem="Kqn-6r-fHF" firstAttribute="trailing" secondItem="JoD-Uj-Kwy" secondAttribute="trailing" id="l9I-fY-0lo"/>
                             <constraint firstItem="Kqn-6r-fHF" firstAttribute="leading" secondItem="JoD-Uj-Kwy" secondAttribute="leading" id="o7e-xO-5Jy"/>
                             <constraint firstItem="4SV-zR-wcf" firstAttribute="leading" secondItem="JoD-Uj-Kwy" secondAttribute="leading" id="xQ9-I4-3Nf"/>
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nb1-KT-0J3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5001" y="179"/>
+            <point key="canvasLocation" x="5000.8000000000002" y="178.56071964017991"/>
         </scene>
         <!--Обои-->
         <scene sceneID="Ldd-cH-g5d">
@@ -202,16 +202,8 @@
                                     <constraint firstItem="YIU-lm-Yc9" firstAttribute="centerX" secondItem="ozA-ef-tXF" secondAttribute="centerX" id="Fkc-w0-lhZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-uQ-bNE" customClass="GADBannerView">
-                                <rect key="frame" x="28" y="553" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="P1b-3X-g5P"/>
-                                    <constraint firstAttribute="width" constant="320" id="zcc-Nd-Wra"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Y3-4a-mT0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="n9r-Hh-OUa">
                                     <size key="itemSize" width="365" height="140"/>
@@ -283,6 +275,14 @@
                                     <outlet property="delegate" destination="SwJ-0a-M6r" id="OYe-fa-zIg"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-uQ-bNE" customClass="GADBannerView">
+                                <rect key="frame" x="28" y="553" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="P1b-3X-g5P"/>
+                                    <constraint firstAttribute="width" constant="320" id="zcc-Nd-Wra"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -290,16 +290,16 @@
                             <constraint firstItem="ozA-ef-tXF" firstAttribute="trailing" secondItem="kgH-Kz-ole" secondAttribute="trailing" id="CHA-fS-Xz9"/>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="trailing" secondItem="kgH-Kz-ole" secondAttribute="trailing" id="EoF-kN-uce"/>
                             <constraint firstItem="ozA-ef-tXF" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="Ezh-Al-QfM"/>
+                            <constraint firstItem="3Y3-4a-mT0" firstAttribute="bottom" secondItem="xkS-uQ-bNE" secondAttribute="bottom" id="Lg4-4g-28J"/>
                             <constraint firstItem="3Y3-4a-mT0" firstAttribute="leading" secondItem="kgH-Kz-ole" secondAttribute="leading" id="NZx-jm-uL1"/>
                             <constraint firstItem="xkS-uQ-bNE" firstAttribute="centerX" secondItem="9z6-XW-gN2" secondAttribute="centerX" id="VuF-Ze-lsP"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="Wg0-y9-YKy"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="leading" secondItem="9z6-XW-gN2" secondAttribute="leading" id="ZMD-zw-y8B"/>
                             <constraint firstItem="ozA-ef-tXF" firstAttribute="leading" secondItem="kgH-Kz-ole" secondAttribute="leading" id="aJz-A9-zKd"/>
-                            <constraint firstItem="3Y3-4a-mT0" firstAttribute="trailing" secondItem="YjJ-IP-zex" secondAttribute="trailing" id="aLG-NT-WqE"/>
                             <constraint firstItem="xkS-uQ-bNE" firstAttribute="bottom" secondItem="kgH-Kz-ole" secondAttribute="bottom" id="bK9-CR-dup"/>
                             <constraint firstItem="ozA-ef-tXF" firstAttribute="top" secondItem="kgH-Kz-ole" secondAttribute="top" id="c6K-BI-vmU"/>
-                            <constraint firstItem="xkS-uQ-bNE" firstAttribute="top" secondItem="3Y3-4a-mT0" secondAttribute="bottom" id="fLw-0A-OGR"/>
                             <constraint firstItem="YjJ-IP-zex" firstAttribute="top" secondItem="9z6-XW-gN2" secondAttribute="top" id="rug-6o-rhB"/>
+                            <constraint firstAttribute="trailing" secondItem="YjJ-IP-zex" secondAttribute="trailing" id="uKu-v1-Alg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgH-Kz-ole"/>
                     </view>
