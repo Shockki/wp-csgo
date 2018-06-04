@@ -57,34 +57,7 @@ class GalleryDataManager {
         cv.collectionViewLayout = layout
     }
     
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    
-    func downloadImage(url: URL, imageView: UIImageView) {
-//        print("Download Started")
-        getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
-            DispatchQueue.main.async() {
-                imageView.image = UIImage(data: data)
-            }
-        }
-    }
-    
     func randNum(_ n: Int) -> Int{
         return Int(arc4random_uniform(UInt32(n)))
-    }
-    
-//-----------------------------------------------------------------
-    
-    func menuImageUpload(urlPicture: String) -> UIImage {
-        let mainPic = URL (string: urlPicture)
-        let data = try! Data(contentsOf: mainPic!)
-        let aData = data
-        return UIImage(data: aData)!
     }    
 }
